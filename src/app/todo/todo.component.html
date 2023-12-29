@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-6 mx-auto">
+                <div class="card shodow-md mt-5">
+                    <div class="card-header text-center">
+                        <h1 class="display-6 fw-bold">Todo App</h1>
+                    </div>
+                    <div class="card-body">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control rounded" [(ngModel)]="newTodo"
+                                placeholder="Görev Ekle">
+                            <button class="btn add-button" (click)="saveTodo()">
+                                <i class="fa-regular fa-square-plus fa-xl"></i>
+                            </button>
+                        </div>
+                        <table class="table table-striped">
+                            <tbody>
+                                <tr *ngFor="let todo of todos;">
+                                    <th scope="row">{{todo.id}}</th>
+                                    <td [ngClass]="{'completed': todo.completed}" (click)="toggleCompletion(todo)" style="cursor: pointer;">{{todo.name}}</td>
+                                    <td>
+                                        <button class="btn text-danger fw-bold" (click)="deleteTodo(todo.id)">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

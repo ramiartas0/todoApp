@@ -1,0 +1,7 @@
+.add-button:hover{
+    outline: none;
+    color: var(--bs-primary);
+}
+.completed {
+    text-decoration: line-through;
+  }
